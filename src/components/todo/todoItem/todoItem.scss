@@ -1,0 +1,121 @@
+@import '../../../variables.scss';
+
+
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: $border-radius;
+  border-left: 4px solid $primary-color;
+  transition: $transition;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  &.completed {
+    border-left-color: $success-color;
+    opacity: 0.8;
+    
+    .todo-text {
+      text-decoration: line-through;
+      color: $light-text;
+    }
+  }
+  
+  .todo-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    
+    .todo-text {
+      font-size: 16px;
+      word-break: break-word;
+    }
+  }
+  
+  .todo-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .edit-btn {
+    background-color: $warning-color;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .delete-btn {
+    background-color: $danger-color;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .save-btn {
+    background-color: $success-color;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .cancel-btn {
+    background-color: $light-text;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .todo-edit {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    
+    input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    
+    .todo-actions {
+      align-self: flex-end;
+    }
+    
+    .todo-edit {
+      flex-direction: column;
+      align-items: stretch;
+      
+      .todo-actions {
+        align-self: flex-end;
+      }
+    }
+  }
+}

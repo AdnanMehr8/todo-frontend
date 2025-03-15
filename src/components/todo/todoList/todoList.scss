@@ -1,0 +1,16 @@
+@import '../../../variables.scss';
+
+
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.empty-list {
+  text-align: center;
+  color: $light-text;
+  padding: 40px 0;
+  font-style: italic;
+}

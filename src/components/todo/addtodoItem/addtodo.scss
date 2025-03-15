@@ -1,0 +1,36 @@
+@import '../../../variables.scss';
+
+.add-todo-form {
+  display: flex;
+  margin-bottom: 30px;
+  gap: 10px;
+  
+  .todo-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: 16px;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+  
+  .add-btn {
+    background-color: $primary-color;
+    color: white;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .add-todo-form {
+    margin-bottom: 20px;
+    
+    .todo-input {
+      padding: 10px;
+    }
+  }
+}
